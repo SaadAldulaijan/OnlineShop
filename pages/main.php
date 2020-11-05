@@ -17,7 +17,7 @@ $testvar = "test";
     <title>Document</title>
 </head>
 <body>
-    <p style="color:red;"><?php echo $testvar ?></p>
+    <p><?php echo $testvar ?></p>
 
     <script src="./js/scripts.js"></script>
 </body>

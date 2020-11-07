@@ -1,8 +1,6 @@
 <?php
 
 
-echo "hello world";
-
 ?>
 
 
@@ -15,48 +13,55 @@ echo "hello world";
     <title>Document</title>
 </head>
 <body>
-
-    <div>
-        <ul class="navList">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-        </ul>
-    </div>
-
     <div class="container">
-        <table class="table table-bordered">
-            <thead>
+        <!-- Navigation Bar -->
+        <div>
+            <ul class="navList">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Admin Page</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+        <!-- End of Navigation Bar -->
+
+
+        <h2>Admin Page</h2>
+
+        <div class="container">
+    
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>Test</th>
+                        <th>Test</th>
+                        <th>Test</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <th>Test</th>
-                    <th>Test</th>
-                    <th>Test</th>
-                    <th>Test</th>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
                 </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-            </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

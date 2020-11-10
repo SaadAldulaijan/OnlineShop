@@ -52,7 +52,7 @@
                         <td>test</td>
                         <td>
                             <a href="#">Delete</a>
-                            <a href="#">Update</a>
+                            <a href="#"> | Update</a>
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +62,7 @@
                         <td>test</td>
                         <td>
                             <a href="#">Delete</a>
-                            <a href="#">Update</a>
+                            <a href="#"> | Update</a>
                         </td>
                     </tr>
                     <tr>
@@ -72,7 +72,7 @@
                         <td>test</td>
                         <td>
                             <a href="#">Delete</a>
-                            <a href="#">Update</a>
+                            <a href="#"> | Update</a>
                         </td>
                     </tr>
                 </tbody>

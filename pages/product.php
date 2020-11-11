@@ -9,7 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
+    <link rel="stylesheet" href="../css/main.css">
     <title>Create Product</title>
 </head>
 <body>
@@ -17,13 +18,13 @@
         <!-- Navigation Bar -->
         <div>
             <ul class="navList">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Product List</a></li>
-                <li><a href="category.php">Product Categories</a></li>
+                <li class="navListItem"><a class="navListItemAnchor" href="#">Home</a></li>
+                <li class="navListItem"><a class="navListItemAnchor" href="#">Product List</a></li>
+                <li class="navListItem"><a class="navListItemAnchor" href="category.php">Product Categories</a></li>
             </ul>
         </div>
         <!-- End of Navigation Bar -->
-
+        
         <!-- Action area -->
         <div class="actionArea">
             <h2>Stock Management</h2>

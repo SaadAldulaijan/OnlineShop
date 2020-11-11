@@ -20,7 +20,6 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  padding: 10px 0 15px 25px;
 }
 
 /* any div*/
@@ -156,7 +155,7 @@ table {
 
 /* Action Area */
 
-.actionArea {
+.page-title {
   margin: 1rem;
   padding: 10px 10px 10px 10px;
 }

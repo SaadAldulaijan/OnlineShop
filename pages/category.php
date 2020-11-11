@@ -18,12 +18,15 @@
     </ul>
     <!-- End of Navigation Bar -->
 
+    
+    <!-- page title -->
+    <div class="page-title">
+        <h1>Product Categories</h1>
+    </div>
+    
+    <!--End of page title -->
     <!-- Body -->
     <div class="container">
-        <br />
-        <h1>Product Categories</h1>
-        <br />
-
         <!-- Card Section -->
         <div class="container">
             <div class="row">

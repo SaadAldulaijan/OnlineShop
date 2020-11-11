@@ -10,49 +10,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/create-product.css">
     <title>Create Product</title>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <div>
-        <ul class="navList">
-            <li><a href="#">Home</a></li>
-            <li><a href="product.php">Product List</a></li>
-            <li><a href="category.php">Product Categories</a></li>
-        </ul>
-    </div>
+    <ul class="navList">
+        <li class="navListItem"><a class="navListItemAnchor" href="#">Home</a></li>
+        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
+        <li class="navListItem"><a class="navListItemAnchor" href="category.php">Product Categories</a></li>
+    </ul>
     <!-- End of Navigation Bar -->
 
-    <!-- Action area -->
-    <div class="actionArea">
+    <!-- page title -->
+    <div class="page-title">
         <h2>Create Product</h2>
     </div>
-    <!-- End of Action area -->
+    <!-- End of page title -->
+
     <!-- Form -->
     <div class="container">
-        <div class="form">
-            <form action="#">
-                <label for="productName">Product Name</label>
-                <input type="text" id="productName" name="productName" placeholder="Product Name">
-
-                <label for="description">Product Description</label>
-                <input type="text" id="description" name="description" placeholder="Product Description">
-
-                <label for="price">Product Price</label>
-                <input type="number" id="price" name="price" placeholder="Product Price">
-
-                <label for="category">Category</label>
-                <select id="category" name="category">
-                    <option value=""></option>
-                    <option value="1">Phone</option>
-                    <option value="2">Laptop</option>
-                    <option value="3">TV</option>
-                </select>
-            
-                <input class="btn btn-primary" type="submit" value="Add">
+        <div class="form-layout">
+            <form>
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" id="productName">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" id="category" name="category">
+                        <option value=""></option>
+                        <option value="1">Phone</option>
+                        <option value="2">Laptop</option>
+                        <option value="3">TV</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

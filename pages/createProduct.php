@@ -33,29 +33,31 @@
     <!-- Form -->
     <div class="container">
         <div class="form-layout">
-            <form>
+        <?php require_once 'process.php'; ?>
+            <form action="process.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id ?>">
                 <div class="form-group">
                     <label for="productName">Product Name</label>
-                    <input type="text" class="form-control" id="productName">
+                    <input name="productName" type="text" class="form-control" id="productName">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description">
+                    <input name="description" type="text" class="form-control" id="description">
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price">
+                    <input name="price" type="number" class="form-control" id="price">
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" id="category" name="category">
-                        <option value=""></option>
+                    <select class="form-control"  name="categoryId">
+                        <option value="" disabled selected></option>
                         <option value="1">Phone</option>
                         <option value="2">Laptop</option>
                         <option value="3">TV</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button name="save" type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
     </div>

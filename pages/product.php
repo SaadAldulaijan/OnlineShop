@@ -1,6 +1,9 @@
 <?php
 
-
+$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
+$sql = "SELECT product.Id, product.Name, product.Description, product.Price, category.Name as 'Category'
+        FROM product INNER JOIN category ON product.CategoryId = category.Id";
+$output = $mysqli->query($sql);
 ?>
 
 
@@ -43,36 +46,19 @@
                 </tr>
             </thead>
             <tbody>
+            <?php while ($dt = $output->fetch_assoc()): ?>
                 <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
+                    <td><?php echo $dt['Name'] ?></td>
+                    <td><?php echo $dt['Description'] ?></td>
+                    <td><?php echo $dt['Price'] ?> SAR</td>
+                    <td><?php echo $dt['Category'] ?></td>
+                    <?php require_once 'process.php' ?>
                     <td>
-                        <a href="#">Delete</a>
-                        <a href="#"> | Update</a>
+                        <a href="process.php?delete=<?php echo $dt['Id'] ?>">Delete</a>
+                        <a href="process.php?edit=<?php echo $dt['Id'] ?>"> | Update</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>
-                        <a href="#">Delete</a>
-                        <a href="#"> | Update</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>
-                        <a href="#">Delete</a>
-                        <a href="#"> | Update</a>
-                    </td>
-                </tr>
+                <?php endwhile ?>
             </tbody>
         </table>
     </div>

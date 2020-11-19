@@ -1,9 +1,17 @@
 <?php
 
 $mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
-$sql = "SELECT product.Id, product.Name, product.Description, product.Price, category.Name as 'Category'
-        FROM product INNER JOIN category ON product.CategoryId = category.Id";
+$sql = "SELECT product.Id, 
+               product.Name, 
+               product.Description, 
+               product.Price, 
+               product.Image, 
+               category.Name as 'Category'
+               FROM product 
+               INNER JOIN category 
+               ON product.CategoryId = category.Id";
 $output = $mysqli->query($sql);
+
 ?>
 
 
@@ -42,6 +50,7 @@ $output = $mysqli->query($sql);
                     <th>Description</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th>Image</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -52,10 +61,11 @@ $output = $mysqli->query($sql);
                     <td><?php echo $dt['Description'] ?></td>
                     <td><?php echo $dt['Price'] ?> SAR</td>
                     <td><?php echo $dt['Category'] ?></td>
-                    <?php require_once 'process.php' ?>
+                    <td><?php echo $dt['Image'] ?></td>
+                    <?php require_once 'crud.php' ?>
                     <td>
-                        <a href="process.php?delete=<?php echo $dt['Id'] ?>">Delete</a>
-                        <a href="process.php?edit=<?php echo $dt['Id'] ?>"> | Update</a>
+                        <a href="crud.php?delete=<?php echo $dt['Id'] ?>">Delete</a>
+                        <a href="updateProduct.php?id=<?php echo $dt['Id'] ?>"> | Update</a>
                     </td>
                 </tr>
                 <?php endwhile ?>

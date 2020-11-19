@@ -81,7 +81,8 @@ if (isset($_GET['id'])){
                     <input name="image" type="file" class="form-control" id="image" 
                         value="<?php echo $item['Image'] ?>">
                 </div>
-                <button name="update" type="submit" class="btn btn-primary">Save Changes</button>
+                <button name="update" type="submit" class="btn btn-primary" 
+                    onclick="alert('Item Updated Successfully');">Save Changes</button>
             </form>
         </div>
     </div>

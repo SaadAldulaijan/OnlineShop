@@ -27,7 +27,7 @@
     <div class="container">
         <div class="form-layout">
         <?php require_once 'crud.php'; ?>
-            <form action="crud.php" method="POST">
+            <form action="crud.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id ?>">
                 <div class="form-group">
                     <label for="productName">Product Name</label>
@@ -54,7 +54,8 @@
                     <label for="image">Image</label>
                     <input name="image" type="file" class="form-control" id="image">
                 </div>
-                <button name="save" type="submit" class="btn btn-primary">Save</button>
+                <button name="save" type="submit" class="btn btn-primary"
+                    onclick="alert('Item Added Successfully');">Save</button>
             </form>
         </div>
     </div>

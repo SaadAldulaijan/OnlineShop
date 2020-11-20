@@ -19,9 +19,6 @@ if (isset($_POST['save'])){
      exit();
 }
 
- 
-
-
 // Delete
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
@@ -34,6 +31,7 @@ if(isset($_GET['delete'])){
 // Update 
 if (isset($_POST['update'])){
 
+    // TODO: 
     // img folder path on solution
     //$target = "../images/".basename($_FILES['image']['name']);
 
@@ -61,43 +59,4 @@ if (isset($_POST['update'])){
     header("Location: http://localhost:4444/OnlineShop/pages/product.php");
     exit();
 }
-
-
-
-// // Update
-//  // TODO: still not working
-// if (isset($_GET['edit'])){
-//     $id = $_GET['edit'];
-//     $sql = "SELECT product.Id, product.Name, product.Description, product.Price, category.Name as 'Category'
-//             FROM product 
-//             INNER JOIN category ON product.CategoryId = category.Id
-//             AND product.Id = $id";
-//     $data = $mysqli->query($sql) or die($mysqli->error());
-
-     
-//     if(count($data) == 1){
-//         $dt = $data->fetch_array();
-//         $productName = $dt['Name'];
-//         $description = $dt['Description'];
-//         $price = $dt['Price'];
-//         $category = $dt['Category'];
-//     }
-// }
-
-// // Update submit
-// if (isset($_POST['update'])){
-//     $id = $_POST['id'];
-//     $productName = $_POST['Name'];
-//     $description = $_POST['description'];
-//     $price = $_POST['price'];
-//     $category = $_POST['category'];
-//     $sql = "UPDATE product 
-//             SET Name=$productName, Description=$description, Price=$price, CategoryId=$category 
-//             where Id=$id"
-//     $mysqli->query($sql) or die($mysqli->error());
-//     header("Location: http://localhost:4444/OnlineShop/pages/product.php");
-//     exit();
-// }
-
-
 ?>

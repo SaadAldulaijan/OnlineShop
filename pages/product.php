@@ -28,7 +28,7 @@ $output = $mysqli->query($sql);
     
     <!-- Navigation Bar -->
         <ul class="navList">
-            <li class="navListItem"><a class="navListItemAnchor" href="#">Home</a></li>
+            <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
             <li class="navListItem"><a class="navListItemAnchor" href="#">Product List</a></li>
             <li class="navListItem"><a class="navListItemAnchor" href="category.php">Product Categories</a></li>
         </ul>

@@ -60,5 +60,10 @@
         </div>
     </div>
     <!-- End of Form -->
+
+    <script>
+        // TODO: validation script is required.
+        function valid()
+    </script>
 </body>
 </html>

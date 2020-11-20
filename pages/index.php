@@ -82,7 +82,7 @@ $output = $mysqli->query($sql);
         // function saveToDB(){
         //     // this is ajax call
         //     $.ajax({
-        //         url: "rating.php?id=<?php echo $_GET['id']?>",
+        //         url: "",
         //         method: "POST",
         //         dataType: 'json',
         //         data: {

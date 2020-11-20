@@ -1,0 +1,13 @@
+1. Validation scripts handles the following:
+    a. Product Name must be string.
+    b. Product Description must be string.
+    c. Product Price must be integer positive number.
+    d. Image must be jpg, jpeg, png only. 
+
+2. Refactor duplicated code and make it reusable instead: 
+    a. Data access layer. 
+    b. CRUD operations.
+
+3. Move to OOP and create class with properties for:
+    a. Product.
+    b. Category.

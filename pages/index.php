@@ -1,32 +1,23 @@
 <?php
 
-// Get All Products
+// Get All Categories
 
 // Database Connection
 $mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
-$sql = "SELECT product.Id, 
-               product.Name, 
-               product.Description, 
-               product.Price, 
-               product.Image, 
-               category.Name as 'Category'
-               FROM product 
-               INNER JOIN category 
-               ON product.CategoryId = category.Id";
+$sql = "SELECT * FROM category";
 $output = $mysqli->query($sql);
 
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <title>Online Shop</title>
+    <title>Category</title>
 </head>
 <body>
-     <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
     <ul class="navList">
         <li class="navListItem"><a class="navListItemAnchor" href="#">Home</a></li>
         <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
@@ -46,53 +37,44 @@ $output = $mysqli->query($sql);
         <!-- Card Section -->
         <div class="container">
             <div class="row">
-                <?php while ($product = $output->fetch_assoc()){ ?>
+                <?php while ($category = $output->fetch_assoc()){ ?>
                 <div class="col">
-                    <div class="card" style="width: 19rem;">
-                        <img src="../images/<?php echo $product['Image'] ?>" height="250px" class="card-img-top" alt="Mobile Phones Images">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../images/<?php echo $category['Name'] ?>.jpg" height="250px" class="card-img-top" alt="Category Images">
                         <div class="card-body">
-                            <h4 class="card-title"><?php echo $product['Name'] ?></h4>
-
-                            <table>
-                                <tr>
-                                    <th>Category:</th>
-                                    <td><?php echo $product['Category'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Desc:</th>
-                                    <td><?php echo $product['Description'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Price:</th>
-                                    <td><?php echo $product['Price']?> SAR</td>
-                                </tr>
-                            </table>
-                            <button onclick="alert('Added to Cart')" class="btn btn-primary">ADD TO CART</button>
+                            <h4 class="card-title"><?php echo $category['Name'] ?></h4>
+                            <p class="card-text"> <?php echo $category['Slogan'] ?> </p>
+                            <a href="products.php?id=<?php echo $category['Id'] ?>" name="explore" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
                 <?php } ?>
+                <!-- <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../images/laptops.jpg" height="250px" class="card-img-top" alt="Mobile Phones Images">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptops</h5>
+                            <p class="card-text"> </p>
+                            <a href="#" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../images/tvs.jpg" height="250px" class="card-img-top" alt="Mobile Phones Images">
+                        <div class="card-body">
+                            <h5 class="card-title">Phones</h5>
+                            <p class="card-text"> </p>
+                            <a href="#" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
         <!-- End Card Section -->
     </div>
     <!-- End of Body -->
 
-    <script>
-        // function saveToDB(){
-        //     // this is ajax call
-        //     $.ajax({
-        //         url: "",
-        //         method: "POST",
-        //         dataType: 'json',
-        //         data: {
-        //             save: 1,
-        //             ratedIndex: ratedIndex,
-        //         }, success: function (response){
-        //             //console.log(response);
-        //         }
-        //     });
-        // }
-    </script>
+    
 </body>
 </html>

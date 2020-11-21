@@ -41,7 +41,7 @@ if($categoryId != 0){
     <ul class="navList">
         <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
         <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="category.php">Product Categories</a></li>
+        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
     </ul>
     <!-- End of Navigation Bar -->
 
@@ -49,8 +49,9 @@ if($categoryId != 0){
     <!-- page title -->
     <div class="page-title">
         <h1>Products</h1>
+        <div style="margin-left: 80%" href="#">CART: <a id="cart"></a></div>
+
     </div>
-    
     <!--End of page title -->
     <!-- Body -->
     <div class="container">
@@ -66,10 +67,6 @@ if($categoryId != 0){
 
                             <table>
                                 <tr>
-                                    <th>Category:</th>
-                                    <td><?php  ?></td>
-                                </tr>
-                                <tr>
                                     <th>Desc:</th>
                                     <td><?php echo $product['Description'] ?></td>
                                 </tr>
@@ -78,7 +75,7 @@ if($categoryId != 0){
                                     <td><?php echo $product['Price']?> SAR</td>
                                 </tr>
                             </table>
-                            <button onclick="alert('Added to Cart')" class="btn btn-primary">ADD TO CART</button>
+                            <button onclick="addToCart(<?php echo $product['Id']?>)" class="btn btn-primary">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -88,22 +85,13 @@ if($categoryId != 0){
         <!-- End Card Section -->
     </div>
     <!-- End of Body -->
-
     <script>
-        // function saveToDB(){
-        //     // this is ajax call
-        //     $.ajax({
-        //         url: "",
-        //         method: "POST",
-        //         dataType: 'json',
-        //         data: {
-        //             save: 1,
-        //             ratedIndex: ratedIndex,
-        //         }, success: function (response){
-        //             //console.log(response);
-        //         }
-        //     });
-        // }
+        var i = 1;
+        function addToCart(productId){
+            var cart = document.getElementById("cart");
+            cart.innerHTML = i++;
+            // TODO: create invoice based on product Id.
+        }
     </script>
 </body>
 </html>

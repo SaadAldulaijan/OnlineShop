@@ -8,12 +8,11 @@
     <title>Create Product</title>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <ul class="navList">
         <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
         <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="category.php">Product Categories</a></li>
+        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
     </ul>
     <!-- End of Navigation Bar -->
 
@@ -60,10 +59,11 @@
         </div>
     </div>
     <!-- End of Form -->
-
     <script>
         // TODO: validation script is required.
-        function valid()
+        function valid(){
+
+        }
     </script>
 </body>
 </html>

@@ -33,7 +33,7 @@ if (isset($_POST['update'])){
 
     // TODO: 
     // img folder path on solution
-    //$target = "../images/".basename($_FILES['image']['name']);
+    $target = "../images/".basename($_FILES['image']['name']);
 
     $productId = $_POST['id'];
     $productName = $_POST['productName'];
@@ -56,6 +56,12 @@ if (isset($_POST['update'])){
             product.Image = '$image'
             WHERE product.Id = '$productId'";
     $mysqli->query($sql);
+
+    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+        $msg = "Photo uploaded successfully";
+    }else{
+        echo "Could not upload the image";
+    }
     header("Location: http://localhost:4444/OnlineShop/pages/product.php");
     exit();
 }

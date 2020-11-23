@@ -9,12 +9,22 @@ if (isset($_POST['save'])){
     $description = $_POST['description'];
     $price = $_POST['price'];
 
+
     if(!empty($_POST['categoryId'])) {
         $categoryId = $_POST['categoryId'];
     } else {
         echo 'Error, please select a category';
     }
-     $mysqli->query("INSERT INTO product (Name, Description, Price, CategoryId) VALUES ('$productName', '$description', '$price', '$categoryId')") or die($mysqli->error());
+
+    $image = null;
+    // get the name of the image
+    if (isset($_FILES['image'])){
+        $image = $_FILES['image']['name'];
+    }
+    else{
+        echo "error";
+    }
+     $mysqli->query("INSERT INTO product (Name, Description, Price, CategoryId, Image) VALUES ('$productName', '$description', '$price', '$categoryId', '$image')") or die($mysqli->error());
      header("Location: http://localhost:4444/OnlineShop/pages/product.php");
      exit();
 }

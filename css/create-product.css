@@ -1,29 +1,3 @@
-/* input[type="text"],
-input[type="number"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  width: 30%;
-  display: block;
-  margin: 30px auto;
-}
-
-.form {
-  margin: 1rem;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  padding-bottom: 0.1px;
-} */
-
 /* My Form */
 .form-group {
   margin-bottom: 1rem;
@@ -43,4 +17,13 @@ input[type="submit"] {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.text-muted {
+  color: #f32637 !important;
 }

@@ -15,7 +15,6 @@ $output = $dbconn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
     <title>Category</title>
 </head>
 <body>
@@ -42,26 +41,6 @@ $output = $dbconn->query($sql);
                     </div>
                 </div>
                 <?php } ?>
-                <!-- <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../images/laptops.jpg" height="250px" class="card-img-top" alt="Mobile Phones Images">
-                        <div class="card-body">
-                            <h5 class="card-title">Laptops</h5>
-                            <p class="card-text"> </p>
-                            <a href="#" class="btn btn-primary">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../images/tvs.jpg" height="250px" class="card-img-top" alt="Mobile Phones Images">
-                        <div class="card-body">
-                            <h5 class="card-title">Phones</h5>
-                            <p class="card-text"> </p>
-                            <a href="#" class="btn btn-primary">Explore</a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <!-- End Card Section -->

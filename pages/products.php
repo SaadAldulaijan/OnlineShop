@@ -4,6 +4,9 @@ include 'header.php';
 // db connection
 require 'dbconnection.php';
 
+//Session 
+session_start();
+//session_destroy();
 $categoryId = 0;
 // Get categoryId from url
 if(isset($_GET['id'])){
@@ -29,8 +32,6 @@ if($categoryId != 0){
     echo mysqli_error($dbconn);
 }
 
-session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -38,18 +39,17 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
     <title>Online Shop</title>
 </head>
 <body>
+    <!--  -->
     <!-- page title -->
     <div class="page-title">
         <h1>Products</h1>
         <div style="margin-left: 80%">CART: 
             <a id="cart"></a>
-            <a class="btn btn-primary" href="cart.php?">GO TO CART</a>
+            <a class="btn btn-primary" href="cart.php">GO TO CART</a>
         </div>
-
     </div>
     <!--End of page title -->
     <!-- Body -->
@@ -60,22 +60,28 @@ session_start();
                 <?php while ($product = $output->fetch_assoc()){ ?>
                 <div class="col">
                     <div class="card" style="width: 19rem;">
-                        <img src="../images/<?php echo $product['Image'] ?>" height="250px" class="card-img-top" alt="Mobile Phones Images">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $product['Name'] ?></h4>
-
-                            <table>
-                                <tr>
-                                    <th>Desc:</th>
-                                    <td><?php echo $product['Description'] ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Price:</th>
-                                    <td><?php echo $product['Price']?> SAR</td>
-                                </tr>
-                            </table>
-                            <button onclick="addToCart(<?php echo $product['Id']?>)" class="btn btn-primary">ADD TO CART</button>
-                        </div>
+                        <img src="../images/<?php echo $product['Image'] ?>" height="250px" class="card-img-top" alt="Product Image">
+                        <form action="cartController.php" method="post">
+                            <div class="card-body">
+                                <input type="hidden" name="redirectId" value="<?php echo $categoryId?>">
+                                <h4 class="card-title"><?php echo $product['Name'] ?></h4>
+                                <input type="hidden" name="productName" 
+                                    value="<?php echo $product['Name'] ?>">
+                                <table>
+                                    <tr>
+                                        <th>Desc:</th>
+                                        <td><?php echo $product['Description'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Price:</th>
+                                        <td><?php echo $product['Price']?> SAR</td>
+                                        <input type="hidden" name="productPrice" 
+                                            value="<?php echo $product['Price'] ?>">
+                                    </tr>
+                                </table>
+                                <button type="submit" name="addToCart" onclick="addToCart(<?php echo $product['Id']?>)" class="btn btn-primary">ADD TO CART</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <?php } ?>
@@ -89,8 +95,6 @@ session_start();
         function addToCart(productId){
             var cart = document.getElementById("cart");
             cart.innerHTML = i++;
-
-            // TODO: create invoice based on product Id.
         }
     </script>
 </body>

@@ -1,11 +1,13 @@
 <?php
+// includes 
+include 'header.php';
+
+// db connection
+require 'dbconnection.php';
 
 // Get All Categories
-
-// Database Connection
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
 $sql = "SELECT * FROM category";
-$output = $mysqli->query($sql);
+$output = $dbconn->query($sql);
 
 ?>
 
@@ -17,15 +19,6 @@ $output = $mysqli->query($sql);
     <title>Category</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <ul class="navList">
-        <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-    </ul>
-    <!-- End of Navigation Bar -->
-
-    
     <!-- page title -->
     <div class="page-title">
         <h1>Welcome To Our Online Shop</h1>

@@ -1,3 +1,7 @@
+<?php
+// includes 
+include 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +12,6 @@
     <title>Create Product</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <ul class="navList">
-        <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-    </ul>
-    <!-- End of Navigation Bar -->
-
     <!-- page title -->
     <div class="page-title">
         <h2>Create Product</h2>

@@ -1,6 +1,10 @@
 <?php 
-// Database Connection
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
+
+// includes 
+include 'header.php';
+
+// db connection
+require 'dbconnection.php';
 
 if (isset($_GET['id'])){
     $productId = $_GET['id'];
@@ -15,7 +19,7 @@ if (isset($_GET['id'])){
             INNER JOIN category 
             ON product.CategoryId = category.Id 
             WHERE product.Id = $productId ";
-    $output = $mysqli->query($sql);
+    $output = $dbconn->query($sql);
     $item = $output->fetch_assoc();
 }
 ?>
@@ -31,15 +35,6 @@ if (isset($_GET['id'])){
     <title>Create Product</title>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <ul class="navList">
-        <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-    </ul>
-    <!-- End of Navigation Bar -->
-
     <!-- page title -->
     <div class="page-title">
         <h2>Edit <?php echo $item['Name'] ?></h2>

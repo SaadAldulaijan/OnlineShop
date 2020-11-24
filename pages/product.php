@@ -1,6 +1,11 @@
 <?php
 
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
+// includes 
+include 'header.php';
+// db connection
+require 'dbconnection.php';
+
+// get all products
 $sql = "SELECT product.Id, 
                product.Name, 
                product.Description, 
@@ -10,7 +15,7 @@ $sql = "SELECT product.Id,
                FROM product 
                INNER JOIN category 
                ON product.CategoryId = category.Id";
-$output = $mysqli->query($sql);
+$output = $dbconn->query($sql);
 
 ?>
 
@@ -24,14 +29,6 @@ $output = $mysqli->query($sql);
     <title>Create Product</title>
 </head>
 <body>
-    
-    <!-- Navigation Bar -->
-        <ul class="navList">
-            <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-            <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-            <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-        </ul>
-    <!-- End of Navigation Bar -->
     
     <!-- page title -->
     <div class="page-title">

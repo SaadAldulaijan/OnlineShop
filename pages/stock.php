@@ -1,4 +1,11 @@
-<?php require 'stockController.php';
+<?php 
+
+// includes 
+include 'header.php';
+// db connection
+require 'dbconnection.php';
+// stock operations
+require 'stockController.php';
 
 $product = (int)$getProducts['Total'];
 $tv = (int)$getTv['TV'];
@@ -20,14 +27,6 @@ $laptop = (int)$getLaptop['Laptop'];
     <title>Stock</title>
 </head>
 <body>
-     <!-- Navigation Bar -->
-    <ul class="navList">
-        <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-    </ul>
-    <!-- End of Navigation Bar -->
-
     
     <!-- page title -->
     <div class="page-title">

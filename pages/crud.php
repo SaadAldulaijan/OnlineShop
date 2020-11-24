@@ -1,8 +1,6 @@
 <?php 
 
-// Database Connection
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
-
+require 'dbconnection.php';
 // Create 
 if (isset($_POST['save'])){
     $productName = $_POST['productName'];
@@ -24,7 +22,7 @@ if (isset($_POST['save'])){
     else{
         echo "error";
     }
-     $mysqli->query("INSERT INTO product (Name, Description, Price, CategoryId, Image) VALUES ('$productName', '$description', '$price', '$categoryId', '$image')") or die($mysqli->error());
+     $dbconn->query("INSERT INTO product (Name, Description, Price, CategoryId, Image) VALUES ('$productName', '$description', '$price', '$categoryId', '$image')") or die($dbconn->error());
      header("Location: http://localhost:4444/OnlineShop/pages/product.php");
      exit();
 }
@@ -32,7 +30,7 @@ if (isset($_POST['save'])){
 // Delete
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
-   $mysqli->query("DELETE FROM product WHERE Id=$id") or die($mysqli->error());
+   $dbconn->query("DELETE FROM product WHERE Id=$id") or die($dbconn->error());
    header("Location: http://localhost:4444/OnlineShop/pages/product.php");
    exit();
 }
@@ -65,7 +63,7 @@ if (isset($_POST['update'])){
             product.CategoryId = '$categoryId',
             product.Image = '$image'
             WHERE product.Id = '$productId'";
-    $mysqli->query($sql);
+    $dbconn->query($sql);
 
     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
         $msg = "Photo uploaded successfully";

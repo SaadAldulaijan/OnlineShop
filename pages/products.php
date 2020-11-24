@@ -1,4 +1,8 @@
 <?php
+// includes 
+include 'header.php';
+// db connection
+require 'dbconnection.php';
 
 $categoryId = 0;
 // Get categoryId from url
@@ -9,7 +13,6 @@ if(isset($_GET['id'])){
 
 // Get All Products by category
 // Database Connection
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
 if($categoryId != 0){
     $sql = "SELECT product.Id, 
                 product.Name, 
@@ -21,10 +24,12 @@ if($categoryId != 0){
                 INNER JOIN category
                 ON product.CategoryId = category.Id
                 WHERE category.Id = $categoryId";
-    $output = $mysqli->query($sql);
+    $output = $dbconn->query($sql);
 }else{
-    echo mysqli_error($mysqli);
+    echo mysqli_error($dbconn);
 }
+
+session_start();
 
 ?>
 
@@ -37,19 +42,13 @@ if($categoryId != 0){
     <title>Online Shop</title>
 </head>
 <body>
-     <!-- Navigation Bar -->
-    <ul class="navList">
-        <li class="navListItem"><a class="navListItemAnchor" href="index.php">Home</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="product.php">Product List</a></li>
-        <li class="navListItem"><a class="navListItemAnchor" href="stock.php">Stock</a></li>
-    </ul>
-    <!-- End of Navigation Bar -->
-
-    
     <!-- page title -->
     <div class="page-title">
         <h1>Products</h1>
-        <div style="margin-left: 80%" href="#">CART: <a id="cart"></a></div>
+        <div style="margin-left: 80%">CART: 
+            <a id="cart"></a>
+            <a class="btn btn-primary" href="cart.php?">GO TO CART</a>
+        </div>
 
     </div>
     <!--End of page title -->
@@ -90,6 +89,7 @@ if($categoryId != 0){
         function addToCart(productId){
             var cart = document.getElementById("cart");
             cart.innerHTML = i++;
+
             // TODO: create invoice based on product Id.
         }
     </script>

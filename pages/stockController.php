@@ -1,12 +1,13 @@
 <?php
 
+// db connection
+require 'dbconnection.php';
 
-$mysqli = new mysqli('localhost' , 'root', '', 'onlineshopdb') or die(mysqli_error($mysqli));
-
+// statistical data
 // Total Products
 $sql_AllProduct = "SELECT count(*) AS 'Total' FROM product";
 
-$output1 = $mysqli->query($sql_AllProduct) or die(mysqli_error($mysqli));
+$output1 = $dbconn->query($sql_AllProduct) or die(mysqli_error($dbconn));
 $getProducts = $output1->fetch_assoc();
 //echo $getProducts['Total'];
 
@@ -17,7 +18,7 @@ $sql_GetTv = "SELECT count(*) AS 'TV'
         ON product.CategoryId = category.Id
         WHERE category.Name = 'TV'";
 
-$output2 = $mysqli->query($sql_GetTv) or die(mysqli_error($mysqli));
+$output2 = $dbconn->query($sql_GetTv) or die(mysqli_error($dbconn));
 $getTv = $output2->fetch_assoc();
 //echo $getTv['TV'];
 
@@ -27,7 +28,7 @@ $sql_GetPhone = "SELECT count(*) AS 'Phone'
         INNER JOIN category
         ON product.CategoryId = category.Id
         WHERE category.Name = 'Phone'";
-$output3 = $mysqli->query($sql_GetPhone) or die(mysqli_error($mysqli));
+$output3 = $dbconn->query($sql_GetPhone) or die(mysqli_error($dbconn));
 $getPhone = $output3->fetch_assoc();
 //echo $getPhone['Phone'];
 
@@ -37,7 +38,7 @@ $sql_GetLaptops = "SELECT count(*) AS 'Laptop'
         INNER JOIN category
         ON product.CategoryId = category.Id
         WHERE category.Name = 'Laptop'";
-$output4 = $mysqli->query($sql_GetLaptops) or die(mysqli_error($mysqli));
+$output4 = $dbconn->query($sql_GetLaptops) or die(mysqli_error($dbconn));
 $getLaptop = $output4->fetch_assoc();
 //echo $getLaptop['Laptop'];
 

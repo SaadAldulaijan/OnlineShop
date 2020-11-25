@@ -46,8 +46,8 @@ if($categoryId != 0){
     <!-- page title -->
     <div class="page-title">
         <h1>Products</h1>
-        <div style="margin-left: 80%">CART: 
-            <a id="cart"></a>
+        <div style="margin-left: 80%"> 
+            <!-- <a id="cart"></a> -->
             <a class="btn btn-primary" href="cart.php">GO TO CART</a>
         </div>
     </div>
@@ -79,7 +79,7 @@ if($categoryId != 0){
                                             value="<?php echo $product['Price'] ?>">
                                     </tr>
                                 </table>
-                                <button type="submit" name="addToCart" onclick="addToCart(<?php echo $product['Id']?>)" class="btn btn-primary">ADD TO CART</button>
+                                <button type="submit" name="addToCart"  class="btn btn-primary">ADD TO CART</button>
                             </div>
                         </form>
                     </div>
@@ -91,11 +91,11 @@ if($categoryId != 0){
     </div>
     <!-- End of Body -->
     <script>
-        var i = 1;
-        function addToCart(productId){
-            var cart = document.getElementById("cart");
-            cart.innerHTML = i++;
-        }
+        // var i = 1;
+        // function addToCart(productId){
+        //     var cart = document.getElementById("cart");
+        //     cart.innerHTML = i++;
+        // }
     </script>
 </body>
 </html>

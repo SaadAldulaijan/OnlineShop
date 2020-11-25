@@ -30,6 +30,18 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                 </script>";
         }
     }
-}
 
+    if(isset($_POST['removeFromCart'])){
+        foreach ($_SESSION['cartSession'] as $key => $value){
+             if($value['productName']==$_POST['productName']){
+                 unset($_SESSION['cartSession'][$key]);
+                 $_SESSION['cartSession']= array_values($_SESSION['cartSession']);
+                 echo "<script>
+                     alert('Item removed');
+                     window.location.href='cart.php';
+                     </script>";
+             }
+        }
+    }
+}
 ?>

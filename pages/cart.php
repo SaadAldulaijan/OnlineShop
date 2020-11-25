@@ -17,7 +17,7 @@ session_start();
                 <th>#</th>
                 <th>Product Name</th>
                 <th>Product Price</th>
-                <th>Quantity</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 <?php 
@@ -32,6 +32,12 @@ session_start();
                                 <td>$index</td>
                                 <td>$value[productName]</td>
                                 <td>$value[productPrice]</td>
+                                <td>
+                                    <form action='cartController.php' method='POST'>
+                                        <button name='removeFromCart' class='btn btn-primary'>Remove</button>
+                                        <input type='hidden' name='productName' value='$value[productName]'>
+                                    </form>
+                                </td>
                             </tr>";
                         }
                     }

@@ -1,5 +1,4 @@
 <?php
-
 // includes 
 include 'header.php';
 // db connection
@@ -16,7 +15,6 @@ $sql = "SELECT product.Id,
                INNER JOIN category 
                ON product.CategoryId = category.Id";
 $output = $dbconn->query($sql);
-
 ?>
 
 
@@ -25,10 +23,9 @@ $output = $dbconn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Product</title>
+    <title>Product</title>
 </head>
 <body>
-    
     <!-- page title -->
     <div class="page-title">
         <h1>Stock Management</h1>

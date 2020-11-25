@@ -13,7 +13,6 @@ if(isset($_GET['id'])){
     $categoryId = $_GET['id'];
 }
 
-
 // Get All Products by category
 // Database Connection
 if($categoryId != 0){
@@ -31,7 +30,6 @@ if($categoryId != 0){
 }else{
     echo mysqli_error($dbconn);
 }
-
 ?>
 
 <!DOCTYPE html>

@@ -11,6 +11,7 @@ session_start();
     <title>Cart</title>
 </head>
 <body>
+    <!-- Cart Table -->
     <div class="container">
         <table class="table">
             <thead>
@@ -45,10 +46,12 @@ session_start();
             </tbody>
         </table>
         <div>
+            <!-- End of Cart Table -->
             <!-- TODO: needs some styling -->
             <h4>Total Price: </h4>
             <h5><?php echo $total ?> SAR </h5>
         </div>
     </div>
+    <!-- End of Table -->
 </body>
 </html>

@@ -8,7 +8,6 @@ require 'dbconnection.php';
 // Get All Categories
 $sql = "SELECT * FROM category";
 $output = $dbconn->query($sql);
-
 ?>
 
 <html lang="en">

@@ -11,9 +11,6 @@ $product = (int)$getProducts['Total'];
 $tv = (int)$getTv['TV'];
 $phone = (int)$getPhone['Phone'];
 $laptop = (int)$getLaptop['Laptop'];
-
-// echo $tv + $phone + $laptop;
-
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +30,7 @@ $laptop = (int)$getLaptop['Laptop'];
     </div>
     <!--End of page title -->
 
+    <!-- Products Card -->
     <div class="container">
         <div class="row">
             <div class="col">
@@ -59,50 +57,51 @@ $laptop = (int)$getLaptop['Laptop'];
                 </table>
             </div>
         </div>
-        
     </div>
+    <!-- End of Products Card -->
 
     <!-- Chartjs Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw==" crossorigin="anonymous"></script>
+
     <!-- Chartjs Setup -->
     <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Laptops', 'TVs', 'Phones'],
-            datasets: [{
-                label: '# of Products',
-                data: [<?php echo $laptop ?>, <?php echo $tv ?>, <?php echo $phone ?>],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Laptops', 'TVs', 'Phones'],
+                datasets: [{
+                    label: '# of Products',
+                    data: [<?php echo $laptop ?>, <?php echo $tv ?>, <?php echo $phone ?>],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 2
                 }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
             }
-        }
-    });
+        });
     </script>
 </body>
 </html>

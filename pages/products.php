@@ -42,16 +42,15 @@ if($categoryId != 0){
     <title>Online Shop</title>
 </head>
 <body>
-    <!--  -->
     <!-- page title -->
     <div class="page-title">
         <h1>Products</h1>
         <div style="margin-left: 80%"> 
-            <!-- <a id="cart"></a> -->
             <a class="btn btn-primary" href="cart.php">GO TO CART</a>
         </div>
     </div>
     <!--End of page title -->
+
     <!-- Body -->
     <div class="container">
         <!-- Card Section -->
@@ -90,12 +89,5 @@ if($categoryId != 0){
         <!-- End Card Section -->
     </div>
     <!-- End of Body -->
-    <script>
-        // var i = 1;
-        // function addToCart(productId){
-        //     var cart = document.getElementById("cart");
-        //     cart.innerHTML = i++;
-        // }
-    </script>
 </body>
 </html>

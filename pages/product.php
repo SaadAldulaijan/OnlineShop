@@ -36,8 +36,8 @@ $output = $dbconn->query($sql);
     </div>
     <!-- End of page title -->
 
+    <!-- Table -->
     <div class="container">
-
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -67,5 +67,6 @@ $output = $dbconn->query($sql);
             </tbody>
         </table>
     </div>
+    <!-- End of Table -->
 </body>
 </html>

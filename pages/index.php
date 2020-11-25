@@ -22,8 +22,8 @@ $output = $dbconn->query($sql);
     <div class="page-title">
         <h1>Welcome To Our Online Shop</h1>
     </div>
-    
     <!--End of page title -->
+    
     <!-- Body -->
     <div class="container">
         <!-- Card Section -->

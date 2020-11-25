@@ -58,6 +58,8 @@ include 'header.php';
         </div>
     </div>
     <!-- End of Form -->
+
+    <!-- Validation script -->
     <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,3 @@
 # OnlineShop
 
-This is a university project only
+This is a university homework. My first try with PHP 
